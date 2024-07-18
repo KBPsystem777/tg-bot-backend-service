@@ -32,20 +32,17 @@ app.listen(port, () => {
         const chatter = yield ctx.getChat();
         console.log("Chatter info: ", chatter);
         console.log(`Message from ${chatter.first_name} <${chatter.username}>: ${(_a = ctx.update.message.text) === null || _a === void 0 ? void 0 : _a.toString()}`);
-        ctx.reply(`
-    Hello, ${chatter.first_name}!
+        const replyMessage = `Hello, ${chatter.first_name}!
 
     Please try our app: https://t.me/devKBPsystembot/devkbpbot
     
-    Here are some of your info:
-
-    Username: ${chatter.username}
-    
-    ${JSON.stringify(chatter)}
+    Also, please take time to visit our whitepaper:
+    https://bpxfinance.gitbook.io
     
     All the best,
     @kbpsystem
-    `);
+    `;
+        ctx.reply(replyMessage);
     }));
     // Now that you specified how to handle messages, you can start your bot.
     // This will connect to the Telegram servers and wait for messages.

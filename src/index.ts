@@ -32,20 +32,18 @@ app.listen(port, () => {
         chatter.username
       }>: ${ctx.update.message.text?.toString()}`
     );
-    ctx.reply(`
-    Hello, ${chatter.first_name}!
+
+    const replyMessage = `Hello, ${chatter.first_name}!
 
     Please try our app: https://t.me/devKBPsystembot/devkbpbot
     
-    Here are some of your info:
-
-    Username: ${chatter.username}
-    
-    ${JSON.stringify(chatter)}
+    Also, please take time to visit our whitepaper:
+    https://bpxfinance.gitbook.io
     
     All the best,
     @kbpsystem
-    `);
+    `;
+    ctx.reply(replyMessage);
   });
 
   // Now that you specified how to handle messages, you can start your bot.
