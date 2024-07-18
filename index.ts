@@ -11,6 +11,11 @@ const apiKey = process.env.API_KEY || "";
 
 app.get("/", (req: any, res: any) => {
   res.send("Please try our app: https://t.me/devKBPsystembot/devkbpbot");
+});
+
+app.listen(port, () => {
+  console.log(`@devKBPsystembot is now running on port ${port}`);
+
   const bot = new Bot(apiKey);
 
   // You can now register listeners on your bot object `bot`.
@@ -48,8 +53,4 @@ app.get("/", (req: any, res: any) => {
 
   // Start the bot.
   bot.start();
-});
-
-app.listen(port, () => {
-  console.log(`@devKBPsystembot is now running on port ${port}`);
 });

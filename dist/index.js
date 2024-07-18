@@ -18,6 +18,9 @@ const port = process.env.PORT || 1995;
 const apiKey = process.env.API_KEY || "";
 app.get("/", (req, res) => {
     res.send("Please try our app: https://t.me/devKBPsystembot/devkbpbot");
+});
+app.listen(port, () => {
+    console.log(`@devKBPsystembot is now running on port ${port}`);
     const bot = new grammy_1.Bot(apiKey);
     // You can now register listeners on your bot object `bot`.
     // grammY will call the listeners when users send messages to your bot.
@@ -48,7 +51,4 @@ app.get("/", (req, res) => {
     // This will connect to the Telegram servers and wait for messages.
     // Start the bot.
     bot.start();
-});
-app.listen(port, () => {
-    console.log(`@devKBPsystembot is now running on port ${port}`);
 });
