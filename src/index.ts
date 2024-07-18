@@ -26,7 +26,6 @@ app.listen(port, () => {
   // Handle other messages.
   bot.on("message", async (ctx) => {
     const chatter = await ctx.getChat();
-    console.log("Chatter info: ", chatter);
     console.log(
       `Message from ${chatter.first_name} <${
         chatter.username

@@ -30,7 +30,6 @@ app.listen(port, () => {
     bot.on("message", (ctx) => __awaiter(void 0, void 0, void 0, function* () {
         var _a;
         const chatter = yield ctx.getChat();
-        console.log("Chatter info: ", chatter);
         console.log(`Message from ${chatter.first_name} <${chatter.username}>: ${(_a = ctx.update.message.text) === null || _a === void 0 ? void 0 : _a.toString()}`);
         const replyMessage = `Hello, ${chatter.first_name}!
 
